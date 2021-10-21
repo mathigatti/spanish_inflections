@@ -34,4 +34,4 @@ search_noun(noun)
 '''
 ```
 
-For more details check examples.ipynb
+For more details check [examples.ipynb](https://github.com/mathigatti/spanish_inflections/blob/main/examples.ipynb)
