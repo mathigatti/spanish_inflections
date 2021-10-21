@@ -9,7 +9,8 @@ Identify and change the gender and number of adjetives and nouns in spanish.
 ```python
 from spanish_inflections import search_adjetive
 adjetive = "grandes"
-search_adjetive(adjetive)
+adjetive_details = search_adjetive(adjetive)
+print(adjetive_details)
 
 # OUTPUT
 '''
@@ -26,7 +27,8 @@ search_adjetive(adjetive)
 ```python
 from spanish_inflections import search_noun
 noun = "perro"
-search_noun(noun)
+noun_details = search_noun(noun)
+print(noun_details)
 
 # OUTPUT
 '''
