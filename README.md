@@ -2,6 +2,10 @@
 
 Identify and change the gender and number of adjetives and nouns in spanish.
 
+## How it works?
+
+This is a Python script that relies in a big list of spanish words and its [EAGLES tags](https://www.cs.upc.edu/~nlp/tools/parole-sp.html) taken from the [Freeling project](https://github.com/TALP-UPC/FreeLing/tree/master/data/es) to find information about the gender and number alternatives of adjetives and nouns.
+
 ## How to use?
 
 ### Adjetives
