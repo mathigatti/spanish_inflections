@@ -11,7 +11,7 @@ from spanish_inflections import search_adjetive
 adjetive = "grandes"
 search_adjetive(adjetive)
 
-# OUTPUTS
+# OUTPUT
 '''
 {'original': 'grandes',
  'FS': 'grande',
@@ -28,7 +28,7 @@ from spanish_inflections import search_noun
 noun = "perro"
 search_noun(noun)
 
-# OUTPUTS
+# OUTPUT
 '''
 {'original': 'perro', 'MS': 'perro', 'MP': 'perros'}
 '''
