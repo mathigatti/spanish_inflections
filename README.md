@@ -41,3 +41,11 @@ print(noun_details)
 ```
 
 For more details check [examples.ipynb](https://github.com/mathigatti/spanish_inflections/blob/main/examples.ipynb)
+
+# References
+- https://www.cs.upc.edu/~nlp/tools/parole-sp.html
+- http://nlp.lsi.upc.edu/freeling/
+- Related projects
+ - https://github.com/Jacobe2169/Python-Inflector
+ - https://github.com/bjascob/pyInflect
+ - https://github.com/jaraco/inflect
