@@ -113,7 +113,12 @@ def fix_verb(rules, word, gender, number):
 
         for a, b in [("F", gender), ("M", gender), ("S", number), ("P", number)]:
             code = code[:-2] + code[-2:].replace(a,b)
-        return search_word(rules, lemma, code)
+        result = search_word(rules, lemma, code)
+        if result != "":
+            return result
+        else:
+            return word
+
     except:
         return word
 
