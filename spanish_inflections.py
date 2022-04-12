@@ -11,6 +11,20 @@ with open("MM.nom.txt",'r') as f:
         rule = line.split()
         rules_noun.append({"word":rule[0], "lemma":rule[1], "code":rule[2]})
 
+rules_tanc = []
+with open("MM.tanc.txt",'r') as f:
+    for line in f.readlines():
+        rule = line.split()
+        rules_tanc.append({"word":rule[0], "lemma":rule[1], "code":rule[2]})
+
+rules_verb = []
+with open("MM.verb.txt",'r') as f:
+    for line in f.readlines():
+        rule = line.split()
+        rules_verb.append({"word":rule[0], "lemma":rule[1], "code":rule[2]})
+
+rules = {"DET": rules_tanc, "ADJ": rules_adjetive, "VERB": rules_verb, "NOUN": rules_noun}
+
 def search_rule(rules, word):
     for rule in rules:
         if word == rule["word"]:
@@ -22,6 +36,19 @@ def search_word(rules, lemma, code):
         if lemma == rule_i["lemma"] and code == rule_i["code"]:
             return rule_i["word"]
     return ""
+
+def search_verb(verb):
+    rule_i = search_rule(rules_verb, verb)
+    if rule_i is None:
+        return {"original": verb}
+    else:
+        lemma = rule["lemma"]
+        code = rule["code"]
+        result_i = {"original": noun}
+        for rule in rules_verb:
+            if rule["lemma"] == lemma:
+                result_i[rule["code"]] = rule["word"]
+        return result_i
 
 def search_noun(noun):
     rule = search_rule(rules_noun, noun)
@@ -70,3 +97,39 @@ def search_adjetive(adjetive):
         del result_i["CS"]
         del result_i["CP"]
         return result_i
+
+def basic_noun_data(word):
+    code = search_rule(rules_noun, word)["code"]
+    gender = code[2]
+    number = code[3]
+    return {"gender": gender, "number": number}
+
+def fix_verb(rules, word, gender, number):
+    try:
+
+        rule = search_rule(rules, word)
+        lemma = rule["lemma"]
+        code = rule["code"]
+
+        for a, b in [("F", gender), ("M", gender), ("S", number), ("P", number)]:
+            code = code[:-2] + code[-2:].replace(a,b)
+        return search_word(rules, lemma, code)
+    except:
+        return word
+
+def fix_word(rules, word, gender, number):
+    try:
+        rule = search_rule(rules, word)
+        lemma = rule["lemma"]
+        code = rule["code"]
+
+        for a, b in [("F", gender), ("M", gender), ("S", number), ("P", number)]:
+            code = code.replace(a,b)
+
+        result = search_word(rules, lemma, code)
+        if result != "":
+            return result
+        else:
+            return word
+    except:
+        return word
