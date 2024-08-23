@@ -40,7 +40,7 @@ print(noun_details)
 '''
 ```
 
-For more details check [examples.ipynb](https://github.com/mathigatti/spanish_inflections/blob/main/examples.ipynb)
+For more details check [examples.ipynb](https://github.com/mathigatti/spanish_inflections/blob/main/examples.ipynb). And you can find some fun applications in this course about [literature and coding](https://docs.google.com/document/d/e/2PACX-1vQUugllkjwgJi3tV_czOiBtw_mKahBUYI7ojj1E3LSWAmix0rAGXOThrExwCLm59NGjmcg08TPl1bWr/pub).
 
 # References
 - https://www.cs.upc.edu/~nlp/tools/parole-sp.html
