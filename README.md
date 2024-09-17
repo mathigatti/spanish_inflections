@@ -1,6 +1,6 @@
 # spanish_inflections
 
-Identify and change the gender and number of adjetives and nouns in spanish.
+Identify and change the gender and number of adjectives, verbs and nouns in spanish.
 
 ## How it works?
 
